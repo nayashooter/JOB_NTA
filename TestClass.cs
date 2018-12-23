@@ -67,8 +67,8 @@ namespace UploadFileTest
             _driverIe.GetDriverInternet().FindElement(By.Name("q")).Submit();
             Assert.IsTrue(true);
 
-            var xml = @"<?xml version=""1.0""?><methodCall><methodName>tl.updateTestCase</methodName><params><param><value><struct><member><name>devKey</name><value><string>e161f73815492f9ba9f7ada9a6a1b23d</string></value></member><member><name>testcaseexternalid</name><value><string>BSI-1</string></value></member><member><name>status</name><value><string>4</string></value></member></struct></value></param></params></methodCall>";
-
+            //var xml = @"<?xml version=""1.0""?><methodCall><methodName>tl.updateTestCase</methodName><params><param><value><struct><member><name>devKey</name><value><string>e161f73815492f9ba9f7ada9a6a1b23d</string></value></member><member><name>testcaseexternalid</name><value><string>BSI-1</string></value></member><member><name>status</name><value><string>4</string></value></member></struct></value></param></params></methodCall>";
+            var xml = @"<?xml version=""1.0""?><methodResponse><params><param><value><array><data><value><struct><member><name>status</name><value><boolean>1</boolean></value></member><member><name>operation</name><value><string>reportTCResult</string></value></member><member><name>overwrite</name><value><boolean>0</boolean></value></member><member><name>message</name><value><string>Success!</string></value></member><member><name>id</name><value><int>2</int></value></member></struct></value></data></array></value></param></params></methodResponse>";
 
             byte[] requestData = Encoding.ASCII.GetBytes(xml);
 
