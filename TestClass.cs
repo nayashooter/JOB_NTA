@@ -17,7 +17,7 @@ namespace UploadFileTest
         ProjectName = "BSI",
         UserId = "admin",
         TestPlan = "Authentification",
-        TestSuite = "BSI-1 : Identifiant ok",
+        TestSuite = "Identification avec identifiant ok/",
         DevKey = "e161f73815492f9ba9f7ada9a6a1b23d")]
     public class TestClass
     {
