@@ -1,0 +1,11 @@
+C:\Users\surface\Documents\SquashTA-Server-1.8.1-RELEASE\execution_home\workspace\upload-file\bin\Release\UploadFileTest.dll
+C:\Users\surface\Documents\SquashTA-Server-1.8.1-RELEASE\execution_home\workspace\upload-file\bin\Release\UploadFileTest.pdb
+C:\Users\surface\Documents\SquashTA-Server-1.8.1-RELEASE\execution_home\workspace\upload-file\bin\Release\nunit.framework.dll
+C:\Users\surface\Documents\SquashTA-Server-1.8.1-RELEASE\execution_home\workspace\upload-file\bin\Release\WebDriver.dll
+C:\Users\surface\Documents\SquashTA-Server-1.8.1-RELEASE\execution_home\workspace\upload-file\bin\Release\WebDriver.Support.dll
+C:\Users\surface\Documents\SquashTA-Server-1.8.1-RELEASE\execution_home\workspace\upload-file\bin\Release\nunit.framework.xml
+C:\Users\surface\Documents\SquashTA-Server-1.8.1-RELEASE\execution_home\workspace\upload-file\bin\Release\WebDriver.xml
+C:\Users\surface\Documents\SquashTA-Server-1.8.1-RELEASE\execution_home\workspace\upload-file\bin\Release\WebDriver.Support.xml
+C:\Users\surface\Documents\SquashTA-Server-1.8.1-RELEASE\execution_home\workspace\upload-file\obj\Release\UploadFileTest.csprojResolveAssemblyReference.cache
+C:\Users\surface\Documents\SquashTA-Server-1.8.1-RELEASE\execution_home\workspace\upload-file\obj\Release\UploadFileTest.dll
+C:\Users\surface\Documents\SquashTA-Server-1.8.1-RELEASE\execution_home\workspace\upload-file\obj\Release\UploadFileTest.pdb
