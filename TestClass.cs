@@ -2,23 +2,20 @@
 using UploadFileTest.Library.Proxy;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.Extensions;
-using System;
-using System.Runtime.InteropServices;
-using System.Threading;
-using System.Windows.Forms;
-using Meyn.TestLink;
+using System.Text;
+using System.Net;
+using System.IO;
 
 namespace UploadFileTest
 {
     [TestFixture]
-    [TestLinkFixture(
+    /*[TestLinkFixture(
         Url = "http://localhost/testlink/lib/api/xmlrpc/v1/xmlrpc.php",
         ProjectName = "BSI",
         UserId = "admin",
         TestPlan = "Authentification",
         TestSuite = "Identification avec identifiant ok/",
-        DevKey = "e161f73815492f9ba9f7ada9a6a1b23d")]
+        DevKey = "e161f73815492f9ba9f7ada9a6a1b23d")]*/
     public class TestClass
     {
         private DriverInternetExplorerUtils _driverIe;
@@ -33,29 +30,29 @@ namespace UploadFileTest
         }
 
 
-        [Test]
-        public void TestUploadFile()
-        {
-            _driverIe.Wait(10);
+        //[Test]
+        //public void TestUploadFile()
+        //{
+        //    _driverIe.Wait(10);
 
-            // se rend à la page www.google.fr
-            _driverIe.GetDriverInternet().Navigate().GoToUrl("http://nervgh.github.io/pages/angular-file-upload/examples/simple/");
-            _driverIe.Wait(10);
+        //    // se rend à la page www.google.fr
+        //    _driverIe.GetDriverInternet().Navigate().GoToUrl("http://nervgh.github.io/pages/angular-file-upload/examples/simple/");
+        //    _driverIe.Wait(10);
 
-            //_driverIe.GetDriverInternet().FindElement(By.XPath("(//input[@type='file'])[2]")).Click();
-            //_driverIe.GetDriverInternet().FindElement(By.XPath("(//input[@type='file'])[2]")).Clear();
-            //string File = @"D:\S2H - POLE TEST ET CONFORMITE\Workspace\NUnit\UploadFileTest\Data\Files\callapp.png";
-            string File = @"C:\image.png";
-            _driverIe.Wait(500);
+        //    //_driverIe.GetDriverInternet().FindElement(By.XPath("(//input[@type='file'])[2]")).Click();
+        //    //_driverIe.GetDriverInternet().FindElement(By.XPath("(//input[@type='file'])[2]")).Clear();
+        //    //string File = @"D:\S2H - POLE TEST ET CONFORMITE\Workspace\NUnit\UploadFileTest\Data\Files\callapp.png";
+        //    string File = @"C:\image.png";
+        //    _driverIe.Wait(500);
 
-            var inputFile = _driverIe.GetDriverInternet().FindElement(By.XPath("(//input[@type='file'])[2]"));
-            _driverIe.Wait(500);
-            inputFile.SendKeys(File);
-            _driverIe.Wait(50);
-            _driverIe.GetDriverInternet().FindElement(By.XPath("(//button[@type='button'])[4]")).Click();
+        //    var inputFile = _driverIe.GetDriverInternet().FindElement(By.XPath("(//input[@type='file'])[2]"));
+        //    _driverIe.Wait(500);
+        //    inputFile.SendKeys(File);
+        //    _driverIe.Wait(50);
+        //    _driverIe.GetDriverInternet().FindElement(By.XPath("(//button[@type='button'])[4]")).Click();
 
-            Assert.IsTrue(true);
-        }
+        //    Assert.IsTrue(true);
+        //}
 
         [Test]
         public void TestSearchGoogle()
@@ -69,6 +66,34 @@ namespace UploadFileTest
             // lance la recherche
             _driverIe.GetDriverInternet().FindElement(By.Name("q")).Submit();
             Assert.IsTrue(true);
+
+            var xml = @"<?xml version=""1.0""?><methodCall><methodName>tl.updateTestCase</methodName><params><param><value><struct><member><name>devKey</name><value><string>e161f73815492f9ba9f7ada9a6a1b23d</string></value></member><member><name>testcaseexternalid</name><value><string>BSI-1</string></value></member><member><name>status</name><value><string>4</string></value></member></struct></value></param></params></methodCall>";
+
+
+            byte[] requestData = Encoding.ASCII.GetBytes(xml);
+
+            // Define the request
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://localhost/testlink/lib/api/xmlrpc/v1/xmlrpc.php");
+            request.Method = "POST";
+            request.ContentType = "text/xml";
+            request.ContentLength = requestData.Length;
+            request.ServerCertificateValidationCallback = delegate { return true; }; //only needed to allow self-signed certificates. If possible don't use this
+
+            using (Stream requestStream = request.GetRequestStream())
+                requestStream.Write(requestData, 0, requestData.Length);
+
+            string result = null;
+
+            // Send XML to the API
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+                using (Stream stream = response.GetResponseStream())
+                {
+                    using (StreamReader reader = new StreamReader(stream, Encoding.ASCII))
+                        result = reader.ReadToEnd();
+                }
+
+            }
         }
 
         [TearDown]
