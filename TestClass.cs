@@ -27,9 +27,9 @@ namespace UploadFileTest
         [SetUp]
         public void Initialize()
         {
-            devKey = TestContext.Parameters.Get("devKey", "e161f73815492f9ba9f7ada9a6a1b23d");
-            testcaseexternalid = TestContext.Parameters.Get("Browser", "BSI-3");
-            testplanid = TestContext.Parameters.Get("Browser", "14");
+            devKey = TestContext.Parameters.Get("devKey"); //, "e161f73815492f9ba9f7ada9a6a1b23d"
+            testcaseexternalid = TestContext.Parameters.Get("testcaseexternalid"); //, "BSI-3"
+            testplanid = TestContext.Parameters.Get("testplanid"); //, "14"
 
             TestContext.WriteLine($"devKey : {devKey}");
             TestContext.WriteLine($"testcaseexternalid : {testcaseexternalid}");
@@ -105,7 +105,7 @@ namespace UploadFileTest
                         result = reader.ReadToEnd();
                         TestContext.WriteLine($"Push Execution result : {result}");
                     }
-                        
+
                 }
 
             }
