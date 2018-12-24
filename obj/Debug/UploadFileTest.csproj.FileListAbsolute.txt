@@ -9,6 +9,10 @@ D:\S2H - POLE TEST ET CONFORMITE\Workspace\NUnit\UploadFileTest\bin\Debug\WebDri
 D:\S2H - POLE TEST ET CONFORMITE\Workspace\NUnit\UploadFileTest\obj\Debug\UploadFileTest.csprojResolveAssemblyReference.cache
 D:\S2H - POLE TEST ET CONFORMITE\Workspace\NUnit\UploadFileTest\obj\Debug\UploadFileTest.dll
 D:\S2H - POLE TEST ET CONFORMITE\Workspace\NUnit\UploadFileTest\obj\Debug\UploadFileTest.pdb
+C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\bin\Debug\NUnit3.TestAdapter.pdb
+C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\bin\Debug\nunit.engine.dll
+C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\bin\Debug\nunit.engine.api.dll
 C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\bin\Debug\UploadFileTest.dll
 C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\bin\Debug\UploadFileTest.pdb
 C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\bin\Debug\nunit.framework.dll
@@ -20,7 +24,3 @@ C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\bin\D
 C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\obj\Debug\UploadFileTest.csprojResolveAssemblyReference.cache
 C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\obj\Debug\UploadFileTest.dll
 C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\obj\Debug\UploadFileTest.pdb
-C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\bin\Debug\NUnit3.TestAdapter.dll
-C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\bin\Debug\NUnit3.TestAdapter.pdb
-C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\bin\Debug\nunit.engine.dll
-C:\Users\surface\Desktop\POLE TEST\WorkSpace\NUnit\upload-file\upload-file\bin\Debug\nunit.engine.api.dll

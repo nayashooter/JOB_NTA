@@ -68,7 +68,7 @@ namespace UploadFileTest
             Assert.IsTrue(true);
 
             //var xml = @"<?xml version=""1.0""?><methodCall><methodName>tl.updateTestCase</methodName><params><param><value><struct><member><name>devKey</name><value><string>e161f73815492f9ba9f7ada9a6a1b23d</string></value></member><member><name>testcaseexternalid</name><value><string>BSI-1</string></value></member><member><name>status</name><value><string>4</string></value></member></struct></value></param></params></methodCall>";
-            var xml = @"<?xml version=""1.0""?><methodCall><methodName>tl.reportTCResult</methodName><params><param><value><struct><member><name>devKey</name><value><string>e161f73815492f9ba9f7ada9a6a1b23d</string></value></member><member><name>testcaseexternalid</name><value><string>BSI-1</string></value></member><member><name>testplanid</name><value><int>14</int></value></member><member><name>status</name><value><string>p</string></value></member><member><name>buildid</name><value><int>1</int></value></member></struct></value></param></params></methodCall>";
+            var xml = @"<?xml version=""1.0""?><methodCall><methodName>tl.reportTCResult</methodName><params><param><value><struct><member><name>devKey</name><value><string>e161f73815492f9ba9f7ada9a6a1b23d</string></value></member><member><name>testcaseexternalid</name><value><string>BSI-2</string></value></member><member><name>testplanid</name><value><int>14</int></value></member><member><name>status</name><value><string>p</string></value></member><member><name>buildid</name><value><int>1</int></value></member></struct></value></param></params></methodCall>";
 
             byte[] requestData = Encoding.ASCII.GetBytes(xml);
 
