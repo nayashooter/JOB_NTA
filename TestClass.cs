@@ -31,6 +31,10 @@ namespace UploadFileTest
             testcaseexternalid = TestContext.Parameters.Get("Browser", "BSI-3");
             testplanid = TestContext.Parameters.Get("Browser", "14");
 
+            TestContext.WriteLine($"devKey : {devKey}");
+            TestContext.WriteLine($"testcaseexternalid : {testcaseexternalid}");
+            TestContext.WriteLine($"testplanid :{testplanid}");
+
             _proxy = new ProxyUtils("inetproxy:83");
             _driverIe = new DriverInternetExplorerUtils(_proxy);
             _driverIe.GetDriverInternet().Manage().Window.Maximize();
@@ -97,7 +101,11 @@ namespace UploadFileTest
                 using (Stream stream = response.GetResponseStream())
                 {
                     using (StreamReader reader = new StreamReader(stream, Encoding.ASCII))
+                    {
                         result = reader.ReadToEnd();
+                        TestContext.WriteLine($"Push Execution result : {result}");
+                    }
+                        
                 }
 
             }
