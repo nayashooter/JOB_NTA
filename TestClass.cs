@@ -24,7 +24,6 @@ namespace UploadFileTest
         private string devKey;
         private string testcaseexternalid;
         private string testplanid;
-        private Log log = new Log();
 
         [SetUp]
         public void Initialize()
@@ -33,9 +32,9 @@ namespace UploadFileTest
             testcaseexternalid = TestContext.Parameters.Get("testcaseexternalid"); //, "BSI-3"
             testplanid = TestContext.Parameters.Get("testplanid"); //, "14"
 
-            log.WriteToJenkins("devKey params", devKey);
-            log.WriteToJenkins("testcaseexternalid params", testcaseexternalid);
-            log.WriteToJenkins("testplanid params", testplanid);
+            Log.WriteToJenkins("devKey params", devKey);
+            Log.WriteToJenkins("testcaseexternalid params", testcaseexternalid);
+            Log.WriteToJenkins("testplanid params", testplanid);
 
             _proxy = new ProxyUtils("inetproxy:83");
             _driverIe = new DriverInternetExplorerUtils(_proxy);
@@ -105,7 +104,7 @@ namespace UploadFileTest
                     using (StreamReader reader = new StreamReader(stream, Encoding.ASCII))
                     {
                         result = reader.ReadToEnd();
-                        log.WriteToJenkins("Push result to Jenkins", result);
+                        Log.WriteToJenkins("Push result to Jenkins", result);
                     }
 
                 }
