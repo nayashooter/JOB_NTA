@@ -5,6 +5,7 @@ using OpenQA.Selenium;
 using System.Text;
 using System.Net;
 using System.IO;
+using UploadFileTest.Library.Log;
 
 namespace UploadFileTest
 {
@@ -31,9 +32,9 @@ namespace UploadFileTest
             testcaseexternalid = TestContext.Parameters.Get("testcaseexternalid"); //, "BSI-3"
             testplanid = TestContext.Parameters.Get("testplanid"); //, "14"
 
-            TestContext.WriteLine($"devKey : {devKey}");
-            TestContext.WriteLine($"testcaseexternalid : {testcaseexternalid}");
-            TestContext.WriteLine($"testplanid :{testplanid}");
+            Log.WriteToJenkins("devKey params", devKey);
+            Log.WriteToJenkins("testcaseexternalid params", testcaseexternalid);
+            Log.WriteToJenkins("testplanid params", testplanid);
 
             _proxy = new ProxyUtils("inetproxy:83");
             _driverIe = new DriverInternetExplorerUtils(_proxy);
@@ -103,7 +104,7 @@ namespace UploadFileTest
                     using (StreamReader reader = new StreamReader(stream, Encoding.ASCII))
                     {
                         result = reader.ReadToEnd();
-                        TestContext.WriteLine($"Push Execution result : {result}");
+                        Log.WriteToJenkins("Push Execution result", result);
                     }
 
                 }

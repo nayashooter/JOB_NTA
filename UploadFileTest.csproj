@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\Driver\DriverInternetExplorerUtils.cs" />
+    <Compile Include="Library\Log\Log.cs" />
     <Compile Include="Library\Proxy\ProxyUtils.cs" />
     <Compile Include="Library\TestLink\Api\UpdateTestCase.cs" />
     <Compile Include="TestClass.cs" />
